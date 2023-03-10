@@ -1,4 +1,4 @@
-# Cadmus CHGC Proof of Concept
+# Cadmus CHGC API
 
 Quick Docker image build:
 
