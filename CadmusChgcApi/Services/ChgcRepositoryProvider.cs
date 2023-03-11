@@ -5,6 +5,7 @@ using Cadmus.Core.Storage;
 using Cadmus.Mongo;
 using Cadmus.General.Parts;
 using Cadmus.Philology.Parts;
+using Cadmus.Img.Parts;
 
 namespace CadmusChgcApi.Services;
 
@@ -35,8 +36,8 @@ public sealed class ChgcRepositoryProvider : IRepositoryProvider
             typeof(NotePart).GetTypeInfo().Assembly,
             // Cadmus.Philology.Parts
             typeof(ApparatusLayerFragment).GetTypeInfo().Assembly,
-            // Cadmus.Chgc.Parts currently does not exist
-            // typeof(MYPART).GetTypeInfo().Assembly,
+            // Cadmus.Img.Parts
+            typeof(GalleryImageAnnotationsPart).GetTypeInfo().Assembly,
         });
 
         _partTypeProvider = new StandardPartTypeProvider(map);

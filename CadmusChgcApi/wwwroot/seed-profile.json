@@ -7,7 +7,7 @@
       "colorKey": "526BE7",
       "partDefinitions": [
         {
-          "typeId": "it.vedph.gallery-image-annotations",
+          "typeId": "it.vedph.img.gallery-image-annotations",
           "name": "image annotations",
           "description": "Annotations on a selected image",
           "isRequired": true,
@@ -83,8 +83,8 @@
     },
     {
       "id": "shape",
-      "label": "A shape in an image.",
-      "description": "The tiled text facet",
+      "label": "shape",
+      "description": "A shape in an image.",
       "colorKey": "E37D66",
       "partDefinitions": [
         {
@@ -453,7 +453,7 @@
           "value": "external IDs"
         },
         {
-          "id": "it.vedph.gallery-image-annotations",
+          "id": "it.vedph.img.gallery-image-annotations",
           "value": "image annotations"
         },
         {
@@ -898,7 +898,7 @@
         "id": "seed.it.vedph.external-ids"
       },
       {
-        "id": "seed.it.vedph.gallery-image-annotations"
+        "id": "seed.it.vedph.img.gallery-image-annotations"
       },
       {
         "id": "seed.it.vedph.historical-events"

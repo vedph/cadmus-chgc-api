@@ -1,6 +1,7 @@
 ﻿using Cadmus.Core.Config;
 using Cadmus.Seed;
 using Cadmus.Seed.General.Parts;
+using Cadmus.Seed.Img.Parts;
 using Cadmus.Seed.Philology.Parts;
 using Fusi.Microsoft.Extensions.Configuration.InMemoryJson;
 using System.Reflection;
@@ -18,8 +19,8 @@ public class ChgcPartSeederFactoryProvider : IPartSeederFactoryProvider
             typeof(NotePartSeeder).Assembly,
             // Cadmus.Seed.Philology.Parts
             typeof(ApparatusLayerFragmentSeeder).Assembly,
-            // Cadmus.Seed.__PRJ__.Parts
-            // typeof(MYSEEDER).GetTypeInfo().Assembly,
+            // Cadmus.Seed.Img.Parts
+            typeof(GalleryImageAnnotationsPartSeeder).GetTypeInfo().Assembly,
         };
         TagAttributeToTypeMap map = new();
         map.Add(seedAssemblies);
