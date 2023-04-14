@@ -25,7 +25,7 @@ using Cadmus.Core.Storage;
 using Cadmus.Export.Preview;
 using Cadmus.Graph.MySql;
 using Cadmus.Graph;
-using CadmusChgcApi.Services;
+using Cadmus.Chgc.Services;
 
 namespace CadmusChgcApi;
 

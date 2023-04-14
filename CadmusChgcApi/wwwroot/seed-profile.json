@@ -7,7 +7,7 @@
       "colorKey": "526BE7",
       "partDefinitions": [
         {
-          "typeId": "it.vedph.img.gallery-image-annotations",
+          "typeId": "it.vedph.chgc.image-annotations",
           "name": "image annotations",
           "description": "Annotations on a selected image",
           "isRequired": true,
@@ -453,7 +453,7 @@
           "value": "external IDs"
         },
         {
-          "id": "it.vedph.img.gallery-image-annotations",
+          "id": "it.vedph.chgc.image-annotations",
           "value": "image annotations"
         },
         {
@@ -659,6 +659,1312 @@
         {
           "id": "literature",
           "value": "literature"
+        }
+      ]
+    },
+    {
+      "id": "chgc-ids@en",
+      "entries": [
+        {
+          "id": "n-aaron",
+          "value": "n-aaron"
+        },
+        {
+          "id": "n-abacuc",
+          "value": "n-abacuc"
+        },
+        {
+          "id": "n-abdias",
+          "value": "n-abdias"
+        },
+        {
+          "id": "n-abdo",
+          "value": "n-abdo"
+        },
+        {
+          "id": "n-abdon",
+          "value": "n-abdon"
+        },
+        {
+          "id": "n-abel",
+          "value": "n-abel"
+        },
+        {
+          "id": "n-abia",
+          "value": "n-abia"
+        },
+        {
+          "id": "n-abiathar",
+          "value": "n-abiathar"
+        },
+        {
+          "id": "n-abiel",
+          "value": "n-abiel"
+        },
+        {
+          "id": "n-abigail",
+          "value": "n-abigail"
+        },
+        {
+          "id": "n-abimelech",
+          "value": "n-abimelech"
+        },
+        {
+          "id": "n-abimelech",
+          "value": "n-abimelech"
+        },
+        {
+          "id": "n-abisue",
+          "value": "n-abisue"
+        },
+        {
+          "id": "n-abiud",
+          "value": "n-abiud"
+        },
+        {
+          "id": "n-abiv",
+          "value": "n-abiv"
+        },
+        {
+          "id": "n-abner",
+          "value": "n-abner"
+        },
+        {
+          "id": "n-abraham",
+          "value": ""
+        },
+        {
+          "id": "n-absalon",
+          "value": "n-absalon"
+        },
+        {
+          "id": "n-abyron",
+          "value": "n-abyron"
+        },
+        {
+          "id": "n-abysai",
+          "value": "n-abysai"
+        },
+        {
+          "id": "n-achab",
+          "value": "n-achab"
+        },
+        {
+          "id": "n-achaz",
+          "value": "n-achaz"
+        },
+        {
+          "id": "n-achias",
+          "value": "n-achias"
+        },
+        {
+          "id": "n-achimas",
+          "value": "n-achimas"
+        },
+        {
+          "id": "n-achitob",
+          "value": "n-achitob"
+        },
+        {
+          "id": "n-achitob",
+          "value": "n-achitob"
+        },
+        {
+          "id": "n-achitob",
+          "value": "n-achitob"
+        },
+        {
+          "id": "n-ada",
+          "value": "n-ada"
+        },
+        {
+          "id": "n-adam",
+          "value": "n-adam"
+        },
+        {
+          "id": "n-adam_eve",
+          "value": "n-adam_eve"
+        },
+        {
+          "id": "n-adonias",
+          "value": "n-adonias"
+        },
+        {
+          "id": "n-aggeus",
+          "value": "n-aggeus"
+        },
+        {
+          "id": "n-ailon",
+          "value": "n-ailon"
+        },
+        {
+          "id": "n-aioth",
+          "value": "n-aioth"
+        },
+        {
+          "id": "n-amarias",
+          "value": "n-amarias"
+        },
+        {
+          "id": "n-amarias",
+          "value": "n-amarias"
+        },
+        {
+          "id": "n-amasa",
+          "value": "n-amasa"
+        },
+        {
+          "id": "n-amasias",
+          "value": "n-amasias"
+        },
+        {
+          "id": "n-amminadab",
+          "value": "n-amminadab"
+        },
+        {
+          "id": "n-amminadab",
+          "value": "n-amminadab"
+        },
+        {
+          "id": "n-amon",
+          "value": "n-amon"
+        },
+        {
+          "id": "n-amon",
+          "value": "n-amon"
+        },
+        {
+          "id": "n-amon",
+          "value": "n-amon"
+        },
+        {
+          "id": "n-amos",
+          "value": "n-amos"
+        },
+        {
+          "id": "n-amram",
+          "value": "n-amram"
+        },
+        {
+          "id": "n-amri",
+          "value": "n-amri"
+        },
+        {
+          "id": "n-anna",
+          "value": "n-anna"
+        },
+        {
+          "id": "n-anna",
+          "value": "n-anna"
+        },
+        {
+          "id": "n-anna",
+          "value": "n-anna"
+        },
+        {
+          "id": "n-aram",
+          "value": "n-aram"
+        },
+        {
+          "id": "n-aram",
+          "value": "n-aram"
+        },
+        {
+          "id": "n-arpachshad ",
+          "value": "n-arpachshad "
+        },
+        {
+          "id": "n-artaxerses",
+          "value": "n-artaxerses"
+        },
+        {
+          "id": "n-asa",
+          "value": "n-asa"
+        },
+        {
+          "id": "n-aser",
+          "value": "n-aser"
+        },
+        {
+          "id": "n-assaradon",
+          "value": "n-assaradon"
+        },
+        {
+          "id": "n-atthalia",
+          "value": "n-atthalia"
+        },
+        {
+          "id": "n-azahel",
+          "value": "n-azahel"
+        },
+        {
+          "id": "n-azahel",
+          "value": "n-azahel"
+        },
+        {
+          "id": "n-azaria",
+          "value": "n-azaria"
+        },
+        {
+          "id": "n-azarias",
+          "value": "n-azarias"
+        },
+        {
+          "id": "n-azarias",
+          "value": "n-azarias"
+        },
+        {
+          "id": "n-azarias",
+          "value": "n-azarias"
+        },
+        {
+          "id": "n-baasa",
+          "value": "n-baasa"
+        },
+        {
+          "id": "n-bala",
+          "value": "n-bala"
+        },
+        {
+          "id": "n-balaam",
+          "value": "n-balaam"
+        },
+        {
+          "id": "n-balthasar",
+          "value": "n-balthasar"
+        },
+        {
+          "id": "n-baruch",
+          "value": "n-baruch"
+        },
+        {
+          "id": "n-bathuel",
+          "value": "n-bathuel"
+        },
+        {
+          "id": "n-benedab",
+          "value": "n-benedab"
+        },
+        {
+          "id": "n-beniamyn",
+          "value": "n-beniamyn"
+        },
+        {
+          "id": "n-boecj",
+          "value": "n-boecj"
+        },
+        {
+          "id": "n-booth",
+          "value": "n-booth"
+        },
+        {
+          "id": "n-buz",
+          "value": "n-buz"
+        },
+        {
+          "id": "n-caath",
+          "value": "n-caath"
+        },
+        {
+          "id": "n-cain",
+          "value": "n-cain"
+        },
+        {
+          "id": "n-calmana",
+          "value": "n-calmana"
+        },
+        {
+          "id": "n-cambises",
+          "value": "n-cambises"
+        },
+        {
+          "id": "n-cedar",
+          "value": "n-cedar"
+        },
+        {
+          "id": "n-celaab",
+          "value": "n-celaab"
+        },
+        {
+          "id": "n-chelion",
+          "value": "n-chelion"
+        },
+        {
+          "id": "n-chore",
+          "value": "n-chore"
+        },
+        {
+          "id": "n-cush",
+          "value": "n-cush"
+        },
+        {
+          "id": "n-cyrus",
+          "value": "n-cyrus"
+        },
+        {
+          "id": "n-cys",
+          "value": "n-cys"
+        },
+        {
+          "id": "n-daniel",
+          "value": "n-daniel"
+        },
+        {
+          "id": "n-darius",
+          "value": "n-darius"
+        },
+        {
+          "id": "n-darius",
+          "value": "n-darius"
+        },
+        {
+          "id": "n-darius",
+          "value": "n-darius"
+        },
+        {
+          "id": "n-datham",
+          "value": "n-datham"
+        },
+        {
+          "id": "n-dauid",
+          "value": "n-dauid"
+        },
+        {
+          "id": "n-delbora",
+          "value": "n-delbora"
+        },
+        {
+          "id": "n-delbora",
+          "value": "n-delbora"
+        },
+        {
+          "id": "n-dina",
+          "value": "n-dina"
+        },
+        {
+          "id": "n-eber",
+          "value": "n-eber"
+        },
+        {
+          "id": "n-effraym",
+          "value": "n-effraym"
+        },
+        {
+          "id": "n-efrom",
+          "value": "n-efrom"
+        },
+        {
+          "id": "n-eleazar",
+          "value": "n-eleazar"
+        },
+        {
+          "id": "n-eliab",
+          "value": "n-eliab"
+        },
+        {
+          "id": "n-eliachim",
+          "value": "n-eliachim"
+        },
+        {
+          "id": "n-eliachim",
+          "value": "n-eliachim"
+        },
+        {
+          "id": "n-elimelech",
+          "value": "n-elimelech"
+        },
+        {
+          "id": "n-elisaphath",
+          "value": "n-elisaphath"
+        },
+        {
+          "id": "n-enoch-1",
+          "value": "n-enoch-1"
+        },
+        {
+          "id": "n-enoch-2",
+          "value": "n-enoch-2"
+        },
+        {
+          "id": "n-enos",
+          "value": "n-enos"
+        },
+        {
+          "id": "n-esau",
+          "value": "n-esau"
+        },
+        {
+          "id": "n-esdras",
+          "value": "n-esdras"
+        },
+        {
+          "id": "n-esebon",
+          "value": "n-esebon"
+        },
+        {
+          "id": "n-euilmerodach",
+          "value": "n-euilmerodach"
+        },
+        {
+          "id": "n-eve",
+          "value": "n-eve"
+        },
+        {
+          "id": "n-ezechias",
+          "value": "n-ezechias"
+        },
+        {
+          "id": "n-ezechiel",
+          "value": "n-ezechiel"
+        },
+        {
+          "id": "n-facee",
+          "value": "n-facee"
+        },
+        {
+          "id": "n-faceia",
+          "value": "n-faceia"
+        },
+        {
+          "id": "n-fenenna",
+          "value": "n-fenenna"
+        },
+        {
+          "id": "n-gad",
+          "value": "n-gad"
+        },
+        {
+          "id": "n-gedeon",
+          "value": "n-gedeon"
+        },
+        {
+          "id": "n-gerson",
+          "value": "n-gerson"
+        },
+        {
+          "id": "n-hagar",
+          "value": "n-hagar"
+        },
+        {
+          "id": "n-ham",
+          "value": "n-ham"
+        },
+        {
+          "id": "n-hela",
+          "value": "n-hela"
+        },
+        {
+          "id": "n-helcana",
+          "value": "n-helcana"
+        },
+        {
+          "id": "n-helchias",
+          "value": "n-helchias"
+        },
+        {
+          "id": "n-helezer",
+          "value": "n-helezer"
+        },
+        {
+          "id": "n-helias",
+          "value": "n-helias"
+        },
+        {
+          "id": "n-heliseus",
+          "value": "n-heliseus"
+        },
+        {
+          "id": "n-hely",
+          "value": "n-hely"
+        },
+        {
+          "id": "n-hely",
+          "value": "n-hely"
+        },
+        {
+          "id": "n-her",
+          "value": "n-her"
+        },
+        {
+          "id": "n-herineides",
+          "value": "n-herineides"
+        },
+        {
+          "id": "n-hisboseth",
+          "value": "n-hisboseth"
+        },
+        {
+          "id": "n-huz",
+          "value": "n-huz"
+        },
+        {
+          "id": "n-ioiada",
+          "value": "n-ioiada"
+        },
+        {
+          "id": "n-irad",
+          "value": "n-irad"
+        },
+        {
+          "id": "n-ismail",
+          "value": "n-ismail"
+        },
+        {
+          "id": "n-jabal",
+          "value": "n-jabal"
+        },
+        {
+          "id": "n-jacob",
+          "value": "n-jacob"
+        },
+        {
+          "id": "n-japheth",
+          "value": "n-japheth"
+        },
+        {
+          "id": "n-jared",
+          "value": "n-jared"
+        },
+        {
+          "id": "n-jayr",
+          "value": "n-jayr"
+        },
+        {
+          "id": "n-jechonias",
+          "value": "n-jechonias"
+        },
+        {
+          "id": "n-jehsus",
+          "value": "n-jehsus"
+        },
+        {
+          "id": "n-jehu",
+          "value": "n-jehu"
+        },
+        {
+          "id": "n-jehu",
+          "value": "n-jehu"
+        },
+        {
+          "id": "n-jehu",
+          "value": "n-jehu"
+        },
+        {
+          "id": "n-jepthe",
+          "value": "n-jepthe"
+        },
+        {
+          "id": "n-jeremias",
+          "value": "n-jeremias"
+        },
+        {
+          "id": "n-jeroboam",
+          "value": "n-jeroboam"
+        },
+        {
+          "id": "n-jeroboam",
+          "value": "n-jeroboam"
+        },
+        {
+          "id": "n-jesuj",
+          "value": "n-jesuj"
+        },
+        {
+          "id": "n-jetran",
+          "value": "n-jetran"
+        },
+        {
+          "id": "n-jhesus",
+          "value": "n-jhesus"
+        },
+        {
+          "id": "n-joab",
+          "value": "n-joab"
+        },
+        {
+          "id": "n-joachath",
+          "value": "n-joachath"
+        },
+        {
+          "id": "n-joachaz",
+          "value": "n-joachaz"
+        },
+        {
+          "id": "n-joachim",
+          "value": "n-joachim"
+        },
+        {
+          "id": "n-joas",
+          "value": "n-joas"
+        },
+        {
+          "id": "n-joas",
+          "value": "n-joas"
+        },
+        {
+          "id": "n-joatan",
+          "value": "n-joatan"
+        },
+        {
+          "id": "n-job",
+          "value": "n-job"
+        },
+        {
+          "id": "n-johannes",
+          "value": "n-johannes"
+        },
+        {
+          "id": "n-johel",
+          "value": "n-johel"
+        },
+        {
+          "id": "n-jonas",
+          "value": "n-jonas"
+        },
+        {
+          "id": "n-jonathas",
+          "value": "n-jonathas"
+        },
+        {
+          "id": "n-joram",
+          "value": "n-joram"
+        },
+        {
+          "id": "n-joram",
+          "value": "n-joram"
+        },
+        {
+          "id": "n-josaphat",
+          "value": "n-josaphat"
+        },
+        {
+          "id": "n-josedech",
+          "value": "n-josedech"
+        },
+        {
+          "id": "n-joseph",
+          "value": "n-joseph"
+        },
+        {
+          "id": "n-josias",
+          "value": "n-josias"
+        },
+        {
+          "id": "n-josue",
+          "value": "n-josue"
+        },
+        {
+          "id": "n-jubal",
+          "value": "n-jubal"
+        },
+        {
+          "id": "n-judas",
+          "value": "n-judas"
+        },
+        {
+          "id": "n-judas",
+          "value": "n-judas"
+        },
+        {
+          "id": "n-judith",
+          "value": "n-judith"
+        },
+        {
+          "id": "n-kenan",
+          "value": "n-kenan"
+        },
+        {
+          "id": "n-keturah",
+          "value": "n-keturah"
+        },
+        {
+          "id": "n-laban",
+          "value": "n-laban"
+        },
+        {
+          "id": "n-labosardach",
+          "value": "n-labosardach"
+        },
+        {
+          "id": "n-lamech",
+          "value": "n-lamech"
+        },
+        {
+          "id": "n-lamech",
+          "value": "n-lamech"
+        },
+        {
+          "id": "n-leuj",
+          "value": "n-leuj"
+        },
+        {
+          "id": "n-loth",
+          "value": "n-loth"
+        },
+        {
+          "id": "n-lya",
+          "value": "n-lya"
+        },
+        {
+          "id": "n-maalon",
+          "value": "n-maalon"
+        },
+        {
+          "id": "n-mahalalel",
+          "value": "n-mahalalel"
+        },
+        {
+          "id": "n-malachias",
+          "value": "n-malachias"
+        },
+        {
+          "id": "n-manaen",
+          "value": "n-manaen"
+        },
+        {
+          "id": "n-manasses",
+          "value": "n-manasses"
+        },
+        {
+          "id": "n-manasses",
+          "value": "n-manasses"
+        },
+        {
+          "id": "n-maria",
+          "value": "n-maria"
+        },
+        {
+          "id": "n-medan",
+          "value": "n-medan"
+        },
+        {
+          "id": "n-mehujael",
+          "value": "n-mehujael"
+        },
+        {
+          "id": "n-melca",
+          "value": "n-melca"
+        },
+        {
+          "id": "n-melchisua",
+          "value": "n-melchisua"
+        },
+        {
+          "id": "n-meraioth",
+          "value": "n-meraioth"
+        },
+        {
+          "id": "n-merarj",
+          "value": "n-merarj"
+        },
+        {
+          "id": "n-merob",
+          "value": "n-merob"
+        },
+        {
+          "id": "n-merodac",
+          "value": "n-merodac"
+        },
+        {
+          "id": "n-methusael",
+          "value": "n-methusael"
+        },
+        {
+          "id": "n-methuselah",
+          "value": "n-methuselah"
+        },
+        {
+          "id": "n-micheas",
+          "value": "n-micheas"
+        },
+        {
+          "id": "n-micheas",
+          "value": "n-micheas"
+        },
+        {
+          "id": "n-micol",
+          "value": "n-micol"
+        },
+        {
+          "id": "n-midian",
+          "value": "n-midian"
+        },
+        {
+          "id": "n-moab",
+          "value": "n-moab"
+        },
+        {
+          "id": "n-moyses",
+          "value": "n-moyses"
+        },
+        {
+          "id": "n-naamah",
+          "value": "n-naamah"
+        },
+        {
+          "id": "n-naason",
+          "value": "n-naason"
+        },
+        {
+          "id": "n-nabaioth",
+          "value": "n-nabaioth"
+        },
+        {
+          "id": "n-nabucodonosor",
+          "value": "n-nabucodonosor"
+        },
+        {
+          "id": "n-nabucodonosor",
+          "value": "n-nabucodonosor"
+        },
+        {
+          "id": "n-nadab",
+          "value": "n-nadab"
+        },
+        {
+          "id": "n-nadab",
+          "value": "n-nadab"
+        },
+        {
+          "id": "n-nahor",
+          "value": "n-nahor"
+        },
+        {
+          "id": "n-nahor",
+          "value": "n-nahor"
+        },
+        {
+          "id": "n-naum",
+          "value": "n-naum"
+        },
+        {
+          "id": "n-neemias",
+          "value": "n-neemias"
+        },
+        {
+          "id": "n-neptalim",
+          "value": "n-neptalim"
+        },
+        {
+          "id": "n-ner",
+          "value": "n-ner"
+        },
+        {
+          "id": "n-nimrod",
+          "value": "n-nimrod"
+        },
+        {
+          "id": "n-noah",
+          "value": "n-noah"
+        },
+        {
+          "id": "n-noema",
+          "value": "n-noema"
+        },
+        {
+          "id": "n-obdidas",
+          "value": "n-obdidas"
+        },
+        {
+          "id": "n-obeth",
+          "value": "n-obeth"
+        },
+        {
+          "id": "n-ochozias",
+          "value": "n-ochozias"
+        },
+        {
+          "id": "n-ochozias",
+          "value": "n-ochozias"
+        },
+        {
+          "id": "n-olda",
+          "value": "n-olda"
+        },
+        {
+          "id": "n-onam",
+          "value": "n-onam"
+        },
+        {
+          "id": "n-ophni",
+          "value": "n-ophni"
+        },
+        {
+          "id": "n-orpha",
+          "value": "n-orpha"
+        },
+        {
+          "id": "n-osee",
+          "value": "n-osee"
+        },
+        {
+          "id": "n-osee",
+          "value": "n-osee"
+        },
+        {
+          "id": "n-othoniel",
+          "value": "n-othoniel"
+        },
+        {
+          "id": "n-ozi",
+          "value": "n-ozi"
+        },
+        {
+          "id": "n-ozias",
+          "value": "n-ozias"
+        },
+        {
+          "id": "n-oziel",
+          "value": "n-oziel"
+        },
+        {
+          "id": "n-peleg",
+          "value": "n-peleg"
+        },
+        {
+          "id": "n-phares",
+          "value": "n-phares"
+        },
+        {
+          "id": "n-phinees",
+          "value": "n-phinees"
+        },
+        {
+          "id": "n-phul",
+          "value": "n-phul"
+        },
+        {
+          "id": "n-rachel",
+          "value": "n-rachel"
+        },
+        {
+          "id": "n-raguel",
+          "value": "n-raguel"
+        },
+        {
+          "id": "n-rasyn",
+          "value": "n-rasyn"
+        },
+        {
+          "id": "n-rebecca",
+          "value": "n-rebecca"
+        },
+        {
+          "id": "n-regusar",
+          "value": "n-regusar"
+        },
+        {
+          "id": "n-reu",
+          "value": "n-reu"
+        },
+        {
+          "id": "n-roboam",
+          "value": "n-roboam"
+        },
+        {
+          "id": "n-ruben",
+          "value": "n-ruben"
+        },
+        {
+          "id": "n-ruth",
+          "value": "n-ruth"
+        },
+        {
+          "id": "n-sadoch",
+          "value": "n-sadoch"
+        },
+        {
+          "id": "n-sadoch",
+          "value": "n-sadoch"
+        },
+        {
+          "id": "n-salah",
+          "value": "n-salah"
+        },
+        {
+          "id": "n-salathiel",
+          "value": "n-salathiel"
+        },
+        {
+          "id": "n-salmanasat",
+          "value": "n-salmanasat"
+        },
+        {
+          "id": "n-salmon",
+          "value": "n-salmon"
+        },
+        {
+          "id": "n-salomon",
+          "value": "n-salomon"
+        },
+        {
+          "id": "n-sammaa",
+          "value": "n-sammaa"
+        },
+        {
+          "id": "n-sampson",
+          "value": "n-sampson"
+        },
+        {
+          "id": "n-samuel",
+          "value": "n-samuel"
+        },
+        {
+          "id": "n-sangar",
+          "value": "n-sangar"
+        },
+        {
+          "id": "n-saphacias",
+          "value": "n-saphacias"
+        },
+        {
+          "id": "n-sara",
+          "value": "n-sara"
+        },
+        {
+          "id": "n-sarah",
+          "value": "n-sarah"
+        },
+        {
+          "id": "n-saraias",
+          "value": "n-saraias"
+        },
+        {
+          "id": "n-sargon",
+          "value": "n-sargon"
+        },
+        {
+          "id": "n-saruia",
+          "value": "n-saruia"
+        },
+        {
+          "id": "n-sauk",
+          "value": "n-sauk"
+        },
+        {
+          "id": "n-sedechias",
+          "value": "n-sedechias"
+        },
+        {
+          "id": "n-sela",
+          "value": "n-sela"
+        },
+        {
+          "id": "n-sellum",
+          "value": "n-sellum"
+        },
+        {
+          "id": "n-sellum",
+          "value": "n-sellum"
+        },
+        {
+          "id": "n-semias",
+          "value": "n-semias"
+        },
+        {
+          "id": "n-sennacherib",
+          "value": "n-sennacherib"
+        },
+        {
+          "id": "n-serug",
+          "value": "n-serug"
+        },
+        {
+          "id": "n-seth",
+          "value": "n-seth"
+        },
+        {
+          "id": "n-shem",
+          "value": "n-shem"
+        },
+        {
+          "id": "n-sine",
+          "value": "n-sine"
+        },
+        {
+          "id": "n-sine",
+          "value": "n-sine"
+        },
+        {
+          "id": "n-sine",
+          "value": "n-sine"
+        },
+        {
+          "id": "n-sogdianus",
+          "value": "n-sogdianus"
+        },
+        {
+          "id": "n-sophonias",
+          "value": "n-sophonias"
+        },
+        {
+          "id": "n-sue",
+          "value": "n-sue"
+        },
+        {
+          "id": "n-symeon",
+          "value": "n-symeon"
+        },
+        {
+          "id": "n-teglafalasar",
+          "value": "n-teglafalasar"
+        },
+        {
+          "id": "n-terah",
+          "value": "n-terah"
+        },
+        {
+          "id": "n-thamar",
+          "value": "n-thamar"
+        },
+        {
+          "id": "n-thobias",
+          "value": "n-thobias"
+        },
+        {
+          "id": "n-thola",
+          "value": "n-thola"
+        },
+        {
+          "id": "n-tobias",
+          "value": "n-tobias"
+        },
+        {
+          "id": "n-tubal-cain",
+          "value": "n-tubal-cain"
+        },
+        {
+          "id": "n-vrias",
+          "value": "n-vrias"
+        },
+        {
+          "id": "n-xerses",
+          "value": "n-xerses"
+        },
+        {
+          "id": "n-xerses",
+          "value": "n-xerses"
+        },
+        {
+          "id": "n-ysaac",
+          "value": "n-ysaac"
+        },
+        {
+          "id": "n-ysacar",
+          "value": "n-ysacar"
+        },
+        {
+          "id": "n-ysaias",
+          "value": "n-ysaias"
+        },
+        {
+          "id": "n-ysaiuel",
+          "value": "n-ysaiuel"
+        },
+        {
+          "id": "n-ysuar",
+          "value": "n-ysuar"
+        },
+        {
+          "id": "n-ythamar",
+          "value": "n-ythamar"
+        },
+        {
+          "id": "n-zabulon",
+          "value": "n-zabulon"
+        },
+        {
+          "id": "n-zacharias",
+          "value": "n-zacharias"
+        },
+        {
+          "id": "n-zacharias",
+          "value": "n-zacharias"
+        },
+        {
+          "id": "n-zacharias",
+          "value": "n-zacharias"
+        },
+        {
+          "id": "n-zamri",
+          "value": "n-zamri"
+        },
+        {
+          "id": "n-zaram",
+          "value": "n-zaram"
+        },
+        {
+          "id": "n-zelpha",
+          "value": "n-zelpha"
+        },
+        {
+          "id": "n-zillah",
+          "value": "n-zillah"
+        },
+        {
+          "id": "n-zorobabel",
+          "value": "n-zorobabel"
+        }
+      ]
+    },
+    {
+      "id": "chgc-renditions@en",
+      "entries": [
+        {
+          "id": "color",
+          "value": "color"
+        },
+        {
+          "id": "color.k",
+          "value": "color: black"
+        },
+        {
+          "id": "color.r",
+          "value": "color: red"
+        },
+        {
+          "id": "color.g",
+          "value": "color: green"
+        },
+        {
+          "id": "color.b",
+          "value": "color: blue"
+        },
+        {
+          "id": "line",
+          "value": "line"
+        },
+        {
+          "id": "line.1",
+          "value": "line: single"
+        },
+        {
+          "id": "line.2",
+          "value": "line: double"
+        },
+        {
+          "id": "line.f",
+          "value": "line: filled"
+        },
+        {
+          "id": "headletter",
+          "value": "headletter"
+        },
+        {
+          "id": "diagram",
+          "value": "diagram"
+        },
+        {
+          "id": "diagram.a",
+          "value": "diagram: A"
+        },
+        {
+          "id": "diagram.b",
+          "value": "diagram: B"
+        },
+        {
+          "id": "diagram.c",
+          "value": "diagram: C"
         }
       ]
     },
@@ -896,9 +2202,6 @@
       },
       {
         "id": "seed.it.vedph.external-ids"
-      },
-      {
-        "id": "seed.it.vedph.img.gallery-image-annotations"
       },
       {
         "id": "seed.it.vedph.historical-events"
