@@ -3,7 +3,7 @@
     {
       "id": "image",
       "label": "image",
-      "description": "An image, corresponding to a page.",
+      "description": "An image, usually corresponding to a page.",
       "colorKey": "526BE7",
       "partDefinitions": [
         {
@@ -78,6 +78,320 @@
           "colorKey": "B0A0F8",
           "groupKey": "comment",
           "sortKey": "i"
+        }
+      ]
+    },
+    {
+      "id": "shape",
+      "label": "shape",
+      "description": "A shape in an image.",
+      "colorKey": "E37D66",
+      "partDefinitions": [
+        {
+          "typeId": "it.vedph.pin-links",
+          "name": "links",
+          "description": "Links to image regions.",
+          "colorKey": "A0C0F8",
+          "groupKey": "general",
+          "sortKey": "a"
+        },
+        {
+          "typeId": "it.vedph.metadata",
+          "name": "metadata",
+          "description": "Generic metadata.",
+          "colorKey": "F8C0C0",
+          "groupKey": "general",
+          "sortKey": "b"
+        },
+        {
+          "typeId": "it.vedph.categories",
+          "name": "categories",
+          "description": "Categories.",
+          "colorKey": "98F8F8",
+          "groupKey": "classification",
+          "sortKey": "c"
+        },
+        {
+          "typeId": "it.vedph.index-keywords",
+          "name": "keywords",
+          "description": "Generic keywords.",
+          "colorKey": "588BBF",
+          "groupKey": "classification",
+          "sortKey": "d"
+        },
+        {
+          "typeId": "it.vedph.doc-references",
+          "name": "references",
+          "description": "Documental references.",
+          "colorKey": "BEF0AA",
+          "groupKey": "references",
+          "sortKey": "e"
+        },
+        {
+          "typeId": "it.vedph.bibliography",
+          "name": "bibliography",
+          "description": "Bibliography.",
+          "colorKey": "20B2AA",
+          "groupKey": "references",
+          "sortKey": "f"
+        },
+        {
+          "typeId": "it.vedph.external-ids",
+          "name": "external IDs",
+          "description": "External identifiers.",
+          "colorKey": "BEE0CA",
+          "groupKey": "references",
+          "sortKey": "g"
+        },
+        {
+          "typeId": "it.vedph.comment",
+          "name": "comment",
+          "description": "Comment.",
+          "colorKey": "B2E0AA",
+          "groupKey": "comment",
+          "sortKey": "h"
+        },
+        {
+          "typeId": "it.vedph.note",
+          "name": "note",
+          "description": "A free text note.",
+          "colorKey": "B0A0F8",
+          "groupKey": "comment",
+          "sortKey": "i"
+        }
+      ]
+    },
+    {
+      "id": "text",
+      "label": "text",
+      "description": "A text, usually inside a shape.",
+      "colorKey": "92BFA4",
+      "partDefinitions": [
+        {
+          "typeId": "it.vedph.token-text",
+          "roleId": "base-text",
+          "isRequired": true,
+          "name": "text",
+          "description": "Text content.",
+          "colorKey": "31AB54",
+          "groupKey": "text",
+          "sortKey": "a"
+        },
+        {
+          "typeId": "it.vedph.token-text-layer",
+          "roleId": "fr.it.vedph.apparatus",
+          "name": "apparatus",
+          "description": "Critical apparatus.",
+          "colorKey": "D4E0A4",
+          "groupKey": "text",
+          "sortKey": "b"
+        },
+        {
+          "typeId": "it.vedph.token-text-layer",
+          "roleId": "fr.it.vedph.pin-links",
+          "name": "links",
+          "description": "Links from specific text regions.",
+          "colorKey": "A0C0F8",
+          "groupKey": "text",
+          "sortKey": "c"
+        },
+        {
+          "typeId": "it.vedph.token-text-layer",
+          "roleId": "fr.it.vedph.comment",
+          "name": "comments",
+          "description": "Comments on text.",
+          "colorKey": "F8D040",
+          "groupKey": "text",
+          "sortKey": "d"
+        },
+        {
+          "typeId": "it.vedph.token-text-layer",
+          "roleId": "fr.it.vedph.chronology",
+          "name": "chronology",
+          "description": "Chronological indication.",
+          "colorKey": "DDA0DD",
+          "groupKey": "text",
+          "sortKey": "e"
+        },
+        {
+          "typeId": "it.vedph.token-text-layer",
+          "roleId": "fr.it.vedph.orthography",
+          "name": "orthography",
+          "description": "Standard orthography.",
+          "colorKey": "E0D4A4",
+          "groupKey": "text",
+          "sortKey": "f"
+        },
+        {
+          "typeId": "it.vedph.note",
+          "roleId": "transl",
+          "name": "translation",
+          "description": "Text's English translation.",
+          "colorKey": "B0A0F8",
+          "groupKey": "text",
+          "sortKey": "g"
+        },
+        {
+          "typeId": "it.vedph.metadata",
+          "name": "metadata",
+          "description": "Generic metadata.",
+          "colorKey": "F8C0C0",
+          "groupKey": "general",
+          "sortKey": "h"
+        },
+        {
+          "typeId": "it.vedph.pin-links",
+          "name": "links",
+          "description": "Links for the text as a whole.",
+          "colorKey": "A0C0F8",
+          "groupKey": "general",
+          "sortKey": "i"
+        },
+        {
+          "typeId": "it.vedph.categories",
+          "name": "categories",
+          "description": "Categories.",
+          "colorKey": "98F8F8",
+          "groupKey": "classification",
+          "sortKey": "j"
+        },
+        {
+          "typeId": "it.vedph.index-keywords",
+          "name": "keywords",
+          "description": "Generic keywords.",
+          "colorKey": "588BBF",
+          "groupKey": "classification",
+          "sortKey": "k"
+        },
+        {
+          "typeId": "it.vedph.doc-references",
+          "name": "references",
+          "description": "Documental references.",
+          "colorKey": "BEF0AA",
+          "groupKey": "references",
+          "sortKey": "l"
+        },
+        {
+          "typeId": "it.vedph.bibliography",
+          "name": "bibliography",
+          "description": "Bibliography.",
+          "colorKey": "20B2AA",
+          "groupKey": "references",
+          "sortKey": "m"
+        },
+        {
+          "typeId": "it.vedph.external-ids",
+          "name": "external IDs",
+          "description": "External identifiers.",
+          "colorKey": "BEE0CA",
+          "groupKey": "references",
+          "sortKey": "n"
+        },
+        {
+          "typeId": "it.vedph.comment",
+          "name": "comment",
+          "description": "Comment.",
+          "colorKey": "B2E0AA",
+          "groupKey": "comment",
+          "sortKey": "o"
+        },
+        {
+          "typeId": "it.vedph.note",
+          "name": "note",
+          "description": "A free text note.",
+          "colorKey": "B0A0F8",
+          "groupKey": "comment",
+          "sortKey": "p"
+        }
+      ]
+    },
+    {
+      "id": "character",
+      "label": "character",
+      "description": "A character cited in text.",
+      "colorKey": "A288A5",
+      "partDefinitions": [
+        {
+          "typeId": "it.vedph.names",
+          "isRequired": true,
+          "name": "names",
+          "description": "Proper name(s).",
+          "colorKey": "C0F0F8",
+          "groupKey": "general",
+          "sortKey": "a"
+        },
+        {
+          "typeId": "it.vedph.historical-events",
+          "name": "events",
+          "description": "Biographic events.",
+          "isRequired": false,
+          "colorKey": "C898C8",
+          "groupKey": "general",
+          "sortKey": "b"
+        },
+        {
+          "typeId": "it.vedph.metadata",
+          "name": "metadata",
+          "description": "Generic metadata.",
+          "colorKey": "F8C0C0",
+          "groupKey": "general",
+          "sortKey": "c"
+        },
+        {
+          "typeId": "it.vedph.categories",
+          "name": "categories",
+          "description": "Categories.",
+          "colorKey": "98F8F8",
+          "groupKey": "classification",
+          "sortKey": "d"
+        },
+        {
+          "typeId": "it.vedph.index-keywords",
+          "name": "keywords",
+          "description": "Generic keywords.",
+          "colorKey": "588BBF",
+          "groupKey": "classification",
+          "sortKey": "e"
+        },
+        {
+          "typeId": "it.vedph.doc-references",
+          "name": "references",
+          "description": "Documental references.",
+          "colorKey": "BEF0AA",
+          "groupKey": "references",
+          "sortKey": "f"
+        },
+        {
+          "typeId": "it.vedph.bibliography",
+          "name": "bibliography",
+          "description": "Bibliography.",
+          "colorKey": "20B2AA",
+          "groupKey": "references",
+          "sortKey": "g"
+        },
+        {
+          "typeId": "it.vedph.external-ids",
+          "name": "external IDs",
+          "description": "External identifiers.",
+          "colorKey": "BEE0CA",
+          "groupKey": "references",
+          "sortKey": "h"
+        },
+        {
+          "typeId": "it.vedph.comment",
+          "name": "comment",
+          "description": "Comment.",
+          "colorKey": "B2E0AA",
+          "groupKey": "comment",
+          "sortKey": "i"
+        },
+        {
+          "typeId": "it.vedph.note",
+          "name": "note",
+          "description": "A free text note.",
+          "colorKey": "B0A0F8",
+          "groupKey": "comment",
+          "sortKey": "j"
         }
       ]
     }
