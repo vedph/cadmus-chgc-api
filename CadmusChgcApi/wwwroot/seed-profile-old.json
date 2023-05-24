@@ -2486,6 +2486,15 @@
           "value": "contoids: fricatives"
         }
       ]
+    },
+    {
+      "id": "pin-link-settings@en",
+      "entries": [
+        {
+          "id": "switch-mode",
+          "value": "true"
+        }
+      ]
     }
   ],
   "seed": {
