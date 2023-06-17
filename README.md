@@ -2,7 +2,7 @@
 
 Quick Docker image build:
 
-    docker build . -t vedph2020/cadmus-chgc-api:0.0.2 -t vedph2020/cadmus-chgc-api:latest
+    docker build . -t vedph2020/cadmus-chgc-api:2.0.0 -t vedph2020/cadmus-chgc-api:latest
 
 (replace with the current version).
 
