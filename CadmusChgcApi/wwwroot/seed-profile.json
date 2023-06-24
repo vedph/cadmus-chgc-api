@@ -1,7 +1,7 @@
 {
   "facets": [
     {
-      "id": "image",
+      "id": "default",
       "label": "image",
       "description": "An image, corresponding to a page.",
       "colorKey": "526BE7",
@@ -143,10 +143,6 @@
           "value": "image annotations"
         },
         {
-          "id": "it.vedph.historical-events",
-          "value": "events"
-        },
-        {
           "id": "it.vedph.index-keywords",
           "value": "index keywords"
         },
@@ -155,57 +151,8 @@
           "value": "metadata"
         },
         {
-          "id": "it.vedph.names",
-          "value": "names"
-        },
-        {
           "id": "it.vedph.note",
           "value": "note"
-        },
-        {
-          "id": "it.vedph.pin-links",
-          "value": "links"
-        },
-        {
-          "id": "it.vedph.token-text",
-          "value": "text"
-        },
-        {
-          "id": "it.vedph.token-text-layer",
-          "value": "text layer"
-        },
-        {
-          "id": "fr.it.vedph.apparatus",
-          "value": "apparatus fr."
-        },
-        {
-          "id": "fr.it.vedph.chronology",
-          "value": "chronology fr."
-        },
-        {
-          "id": "fr.it.vedph.comment",
-          "value": "comment fr."
-        },
-        {
-          "id": "fr.it.vedph.orthography",
-          "value": "orthography fr."
-        },
-        {
-          "id": "fr.it.vedph.pin-links",
-          "value": "links fr."
-        }
-      ]
-    },
-    {
-      "id": "apparatus-tags@en",
-      "entries": [
-        {
-          "id": "margin",
-          "value": "margin"
-        },
-        {
-          "id": "inter",
-          "value": "interlinear"
         }
       ]
     },
@@ -279,72 +226,20 @@
       "id": "categories@en",
       "entries": [
         {
-          "id": "architecture",
-          "value": "architecture"
+          "id": "layouts",
+          "value": "layouts"
         },
         {
-          "id": "geography",
-          "value": "geography"
+          "id": "layouts.-",
+          "value": "layouts: default"
         },
         {
-          "id": "geography.cities",
-          "value": "geography: cities"
+          "id": "layouts.diagrams",
+          "value": "layouts: diagrams"
         },
         {
-          "id": "geography.regions",
-          "value": "geography: regions"
-        },
-        {
-          "id": "ethnography",
-          "value": "ethnography"
-        },
-        {
-          "id": "ethnography.death",
-          "value": "ethnography: death"
-        },
-        {
-          "id": "ethnography.food",
-          "value": "ethnography: food"
-        },
-        {
-          "id": "ethnography.peoples",
-          "value": "ethnography: peoples"
-        },
-        {
-          "id": "ethnography.religion",
-          "value": "ethnography: religion"
-        },
-        {
-          "id": "ethnography.religion.deities",
-          "value": "ethnography: religion deities"
-        },
-        {
-          "id": "ethnography.religion.rites",
-          "value": "ethnography: religion rites"
-        },
-        {
-          "id": "history",
-          "value": "history"
-        },
-        {
-          "id": "language",
-          "value": "language"
-        },
-        {
-          "id": "language.phonology",
-          "value": "language: phonology"
-        },
-        {
-          "id": "language.morphology",
-          "value": "language: morphology"
-        },
-        {
-          "id": "language.syntax",
-          "value": "language: syntax"
-        },
-        {
-          "id": "literature",
-          "value": "literature"
+          "id": "layouts.text",
+          "value": "layouts: external text"
         }
       ]
     },
@@ -1926,148 +1821,21 @@
       ]
     },
     {
-      "id": "chgc-renditions@en",
+      "id": "chgc-gallery-sources@en",
       "entries": [
         {
-          "id": "color",
-          "value": "color"
+          "id": "ccc-ms029",
+          "value": "https://dms-data.stanford.edu/data/manifests/Parker/xj710dc7305/manifest.json"
         },
         {
-          "id": "color.k",
-          "value": "color: black"
-        },
-        {
-          "id": "color.r",
-          "value": "color: red"
-        },
-        {
-          "id": "color.g",
-          "value": "color: green"
-        },
-        {
-          "id": "color.b",
-          "value": "color: blue"
-        },
-        {
-          "id": "line",
-          "value": "line"
-        },
-        {
-          "id": "line.1",
-          "value": "line: single"
-        },
-        {
-          "id": "line.2",
-          "value": "line: double"
-        },
-        {
-          "id": "line.f",
-          "value": "line: filled"
-        },
-        {
-          "id": "headletter",
-          "value": "headletter"
-        },
-        {
-          "id": "diagram",
-          "value": "diagram"
-        },
-        {
-          "id": "diagram.a",
-          "value": "diagram: A"
-        },
-        {
-          "id": "diagram.b",
-          "value": "diagram: B"
-        },
-        {
-          "id": "diagram.c",
-          "value": "diagram: C"
-        }
-      ]
-    },
-    {
-      "id": "chronology-tags@en",
-      "entries": [
-        {
-          "id": "bat",
-          "value": "battle"
-        },
-        {
-          "id": "prst",
-          "value": "priesthood"
-        },
-        {
-          "id": "cos",
-          "value": "consulship"
+          "id": "dante",
+          "value": "https://www.dante.unina.it/images/ms/CNMD0000263308/manifest.json"
         }
       ]
     },
     {
       "id": "comment-categories@en",
       "targetId": "categories"
-    },
-    {
-      "id": "event-relations@en",
-      "entries": [
-        {
-          "id": "person:birth:mother",
-          "value": "mother"
-        },
-        {
-          "id": "person:birth:father",
-          "value": "father"
-        },
-        {
-          "id": "person:marriage:husband",
-          "value": "husband"
-        },
-        {
-          "id": "person:marriage:wife",
-          "value": "wife"
-        }
-      ]
-    },
-    {
-      "id": "event-types@en",
-      "entries": [
-        {
-          "id": "person.birth",
-          "value": "birth"
-        },
-        {
-          "id": "person.death",
-          "value": "death"
-        },
-        {
-          "id": "person.marriage",
-          "value": "marriage"
-        },
-        {
-          "id": "person.job",
-          "value": "profession"
-        },
-        {
-          "id": "person.job.-",
-          "value": "profession"
-        },
-        {
-          "id": "person.job.pope",
-          "value": "pope"
-        },
-        {
-          "id": "person.job.cardinal",
-          "value": "cardinal"
-        },
-        {
-          "id": "person.job.bishop",
-          "value": "bishop"
-        },
-        {
-          "id": "person.job.friar",
-          "value": "friar"
-        }
-      ]
     },
     {
       "id": "gallery-image-annotation-filters@en",
@@ -2118,60 +1886,6 @@
           "value": "Spanish"
         }
       ]
-    },
-    {
-      "id": "name-languages@en",
-      "targetId": "languages"
-    },
-    {
-      "id": "name-piece-types@en",
-      "entries": [
-        {
-          "id": "name",
-          "value": "name"
-        },
-        {
-          "id": "epithet",
-          "value": "epithet"
-        }
-      ]
-    },
-    {
-      "id": "orthography-tags@en",
-      "entries": [
-        {
-          "id": "v",
-          "value": "vocoids"
-        },
-        {
-          "id": "v.iotacism",
-          "value": "vocoids: iotacism"
-        },
-        {
-          "id": "v.monop",
-          "value": "vocoids: monophthongization"
-        },
-        {
-          "id": "c",
-          "value": "contoids"
-        },
-        {
-          "id": "c.pls",
-          "value": "contoids: plosives"
-        },
-        {
-          "id": "c.liq",
-          "value": "contoids: liquids"
-        },
-        {
-          "id": "c.liq",
-          "value": "contoids: nasals"
-        },
-        {
-          "id": "c.fri",
-          "value": "contoids: fricatives"
-        }
-      ]
     }
   ],
   "seed": {
@@ -2200,11 +1914,8 @@
         "options": {
           "maxCategoriesPerItem": 3,
           "categories": [
-            "language.phonology",
-            "language.morphology",
-            "language.syntax",
-            "literature",
-            "geography"
+            "layouts.diagrams",
+            "layouts.text"
           ]
         }
       },
@@ -2212,7 +1923,7 @@
         "id": "seed.it.vedph.comment",
         "options": {
           "languages": ["eng", "ita"],
-          "categories": ["language.phonology", "language.syntax", "history"]
+          "categories": ["layouts.diagrams", "layouts.text"]
         }
       },
       {
@@ -2220,9 +1931,6 @@
       },
       {
         "id": "seed.it.vedph.external-ids"
-      },
-      {
-        "id": "seed.it.vedph.historical-events"
       },
       {
         "id": "seed.it.vedph.index-keywords",
@@ -2235,53 +1943,12 @@
         "id": "seed.it.vedph.metadata"
       },
       {
-        "id": "seed.it.vedph.names"
-      },
-      {
         "id": "seed.it.vedph.note",
         "options": {
           "tags": ["language", "history", "geography"]
         }
-      },
-      {
-        "id": "seed.it.vedph.pin-links"
-      },
-      {
-        "id": "seed.it.vedph.token-text"
-      },
-      {
-        "id": "seed.it.vedph.token-text-layer",
-        "options": {
-          "maxFragmentCount": 3
-        }
       }
     ],
-    "fragmentSeeders": [
-      {
-        "id": "seed.fr.it.vedph.apparatus"
-      },
-      {
-        "id": "seed.fr.it.vedph.chronology",
-        "options": {
-          "tags": ["bat", "prst", "cos"]
-        }
-      },
-      {
-        "id": "seed.fr.it.vedph.comment",
-        "options": {
-          "languages": ["eng", "ita"],
-          "categories": ["language.phonology", "language.syntax", "history"]
-        }
-      },
-      {
-        "id": "seed.fr.it.vedph.orthography",
-        "options": {
-          "tags": ["ph.c.occl.", "ph.c.liq.", "ph.c.nas."]
-        }
-      },
-      {
-        "id": "seed.fr.it.vedph.pin-links"
-      }
-    ]
+    "fragmentSeeders": []
   }
 }
