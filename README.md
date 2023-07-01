@@ -14,6 +14,8 @@ This is a Cadmus API layer customized for the CHGC project (*Cadmus Compendium H
 
 ## History
 
+- 2023-07-01: added export API.
+- 2023-06-27: only 5 seeded items in config.
 - 2023-06-24: updated profile.
 - 2023-06-23: updated packages.
 
