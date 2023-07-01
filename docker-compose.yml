@@ -26,14 +26,10 @@ services:
       - 5432:5432
     networks:
       - cadmus-chgc-network
-    # volumes:
-      # ensure you have created the var/db/pgsql folder in the host
-      # https://hub.docker.com/r/postgis/postgis
-      # - /var/db/pgsql:/var/lib/postgresql/data
 
   # Cadmus CHGC API
   cadmus-chgc-api:
-    image: vedph2020/cadmus-chgc-api:2.0.0
+    image: vedph2020/cadmus-chgc-api:2.0.1
     container_name: cadmus-chgc-api
     ports:
       # https://stackoverflow.com/questions/48669548/why-does-aspnet-core-start-on-port-80-from-within-docker
