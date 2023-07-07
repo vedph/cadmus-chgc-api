@@ -2,7 +2,7 @@
 
 Quick Docker image build:
 
-    docker build . -t vedph2020/cadmus-chgc-api:2.0.1 -t vedph2020/cadmus-chgc-api:latest
+    docker build . -t vedph2020/cadmus-chgc-api:2.0.2 -t vedph2020/cadmus-chgc-api:latest
 
 (replace with the current version).
 
@@ -14,6 +14,9 @@ This is a Cadmus API layer customized for the CHGC project (*Cadmus Compendium H
 
 ## History
 
+### 2.0.2
+
+- 2023-07-07: updated packages.
 - 2023-07-06: updated packages.
 
 ### 2.0.1

@@ -49,8 +49,7 @@ public class ExportController : ControllerBase
             DocItemComposition composition = new();
             if (!string.IsNullOrEmpty(model.TargetXml))
             {
-                composition.Document = XDocument.Parse(model.TargetXml,
-                    LoadOptions.PreserveWhitespace);
+                composition.Document = XDocument.Parse(model.TargetXml);
             }
             composer.Open(composition);
 
