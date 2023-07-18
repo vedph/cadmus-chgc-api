@@ -4,6 +4,7 @@ using Cadmus.Core.Storage;
 using CadmusChgcApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
 namespace CadmusChgcApi.Controllers;
@@ -38,16 +39,24 @@ public sealed class ImportController : ControllerBase
     /// </returns>
     [HttpPost("api/import/groups/{id}")]
     public ImportItemModel Import([FromRoute] string id,
-        [FromBody] XmlBindingModel model)
+        [FromBody] ImportItemBindingModel model)
     {
         ICadmusRepository repository = _repositoryProvider.CreateRepository();
 
         try
         {
             XDocument doc = XDocument.Parse(model.Xml ?? "");
-            ChgcItemImporter importer = new(repository);
+            ChgcItemImporter importer = new(repository)
+            {
+                UriShortenerPattern = !string.IsNullOrEmpty(model.UriShortenerPattern)
+                    ? new Regex(model.UriShortenerPattern)
+                    : null
+            };
             int added = importer.Import(id, doc);
-            return new ImportItemModel { Count = added };
+            return new ImportItemModel
+            {
+                Count = added
+            };
         }
         catch (Exception ex)
         {
