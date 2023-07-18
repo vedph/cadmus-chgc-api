@@ -18,11 +18,12 @@
 
   <ItemGroup>
 	  <PackageReference Include="AspNetCore.Identity.Mongo" Version="8.3.3" />
-	  <PackageReference Include="Cadmus.Api.Controllers" Version="8.0.5" />
-	  <PackageReference Include="Cadmus.Api.Models" Version="8.0.5" />
-	  <PackageReference Include="Cadmus.Api.Services" Version="8.0.5" />
-	  <PackageReference Include="Cadmus.Chgc.Export" Version="2.0.0" />
-	  <PackageReference Include="Cadmus.Chgc.Services" Version="2.0.0" />
+	  <PackageReference Include="Cadmus.Api.Controllers" Version="8.0.6" />
+	  <PackageReference Include="Cadmus.Api.Models" Version="8.0.6" />
+	  <PackageReference Include="Cadmus.Api.Services" Version="8.0.6" />
+	  <PackageReference Include="Cadmus.Chgc.Export" Version="2.0.1" />
+	  <PackageReference Include="Cadmus.Chgc.Import" Version="2.0.1" />
+	  <PackageReference Include="Cadmus.Chgc.Services" Version="2.0.1" />
 	  <PackageReference Include="Cadmus.Graph.Extras" Version="2.3.4" />
 	  <PackageReference Include="Cadmus.Seed.General.Parts" Version="5.0.4" />
 	  <PackageReference Include="Cadmus.Seed.Img.Parts" Version="2.0.0" />

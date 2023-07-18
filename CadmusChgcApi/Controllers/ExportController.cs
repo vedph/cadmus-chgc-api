@@ -39,7 +39,7 @@ public class ExportController : ControllerBase
     /// <returns>Result with <c>Xml</c> or <c>Error</c>.</returns>
     [HttpPost("api/export/groups/{id}")]
     public ExportItemModel ExportItem([FromRoute] string id,
-        [FromBody] ExportItemBindingModel model)
+        [FromBody] XmlBindingModel model)
     {
         ICadmusRepository repository = _repositoryProvider.CreateRepository();
 
@@ -47,9 +47,9 @@ public class ExportController : ControllerBase
         {
             RamChgcTeiItemComposer composer = new();
             DocItemComposition composition = new();
-            if (!string.IsNullOrEmpty(model.TargetXml))
+            if (!string.IsNullOrEmpty(model.Xml))
             {
-                composition.Document = XDocument.Parse(model.TargetXml);
+                composition.Document = XDocument.Parse(model.Xml);
             }
             composer.Open(composition);
 

@@ -2,8 +2,8 @@
 
 namespace CadmusChgcApi.Models;
 
-public class ExportItemBindingModel
+public class XmlBindingModel
 {
     [MaxLength(50000)]
-    public string? TargetXml { get; set; }
+    public string? Xml { get; set; }
 }

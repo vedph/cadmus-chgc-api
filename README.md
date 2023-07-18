@@ -14,6 +14,10 @@ This is a Cadmus API layer customized for the CHGC project (*Cadmus Compendium H
 
 ## History
 
+- 2023-07-18:
+  - updated packages (models and importer).
+  - added import controller.
+
 ### 3.0.0
 
 - 2023-07-16: refactored image annotations system.

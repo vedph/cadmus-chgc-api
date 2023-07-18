@@ -85,15 +85,21 @@
   "flags": [
     {
       "id": 1,
-      "label": "complete",
-      "description": "The item is complete.",
-      "colorKey": "F0B880"
+      "label": "imported",
+      "description": "The item is imported.",
+      "colorKey": "F88006"
     },
     {
       "id": 2,
+      "label": "complete",
+      "description": "The item is complete.",
+      "colorKey": "7FD7F0"
+    },
+    {
+      "id": 4,
       "label": "revised",
       "description": "The item has been revised.",
-      "colorKey": "60CF60"
+      "colorKey": "85F07F"
     }
   ],
   "index": {
