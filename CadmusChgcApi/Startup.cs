@@ -27,6 +27,7 @@ using Cadmus.Chgc.Services;
 using Cadmus.Graph.Ef.PgSql;
 using Cadmus.Graph.Ef;
 using Cadmus.Graph.Extras;
+using Cadmus.Index;
 
 namespace CadmusChgcApi;
 
@@ -240,8 +241,14 @@ public sealed class Startup
         string cs = string.Format(Configuration.GetConnectionString("Index")!,
             Configuration.GetValue<string>("DatabaseNames:Data"));
 
-        services.AddSingleton<IItemIndexFactoryProvider>(_ =>
-            new StandardItemIndexFactoryProvider(cs));
+        var factory = new StandardItemIndexFactoryProvider(cs);
+        services.AddSingleton<IItemIndexFactoryProvider>(_ => factory);
+
+        services.AddSingleton<IItemIndexWriter>(_ =>
+            factory.GetFactory(File.ReadAllText(
+                Path.Combine(HostEnvironment.ContentRootPath,
+                    "wwwroot",
+                    "seed-profile.json"))).GetItemIndexWriter()!);
     }
 
     /// <summary>

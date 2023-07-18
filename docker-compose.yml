@@ -29,7 +29,7 @@ services:
 
   # Cadmus CHGC API
   cadmus-chgc-api:
-    image: vedph2020/cadmus-chgc-api:2.0.2
+    image: vedph2020/cadmus-chgc-api:3.0.1
     container_name: cadmus-chgc-api
     ports:
       # https://stackoverflow.com/questions/48669548/why-does-aspnet-core-start-on-port-80-from-within-docker

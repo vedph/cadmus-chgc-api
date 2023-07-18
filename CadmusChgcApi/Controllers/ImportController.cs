@@ -1,6 +1,7 @@
 ﻿using Cadmus.Chgc.Import;
 using Cadmus.Core;
 using Cadmus.Core.Storage;
+using Cadmus.Index;
 using CadmusChgcApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -21,11 +22,14 @@ public sealed class ImportController : ControllerBase
     // package Serilog.Extensions.Logging. Also notice you must inject
     // ILogger<T>, not just ILogger.
     private readonly ILogger<ExportController> _logger;
+    private readonly IItemIndexWriter _indexWriter;
 
     public ImportController(IRepositoryProvider repositoryProvider,
+        IItemIndexWriter indexWriter,
         ILogger<ExportController> logger)
     {
         _repositoryProvider = repositoryProvider;
+        _indexWriter = indexWriter;
         _logger = logger;
     }
 
@@ -46,7 +50,7 @@ public sealed class ImportController : ControllerBase
         try
         {
             XDocument doc = XDocument.Parse(model.Xml ?? "");
-            ChgcItemImporter importer = new(repository)
+            ChgcItemImporter importer = new(repository, _indexWriter)
             {
                 UriShortenerPattern = !string.IsNullOrEmpty(model.UriShortenerPattern)
                     ? new Regex(model.UriShortenerPattern)
