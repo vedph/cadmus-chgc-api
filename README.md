@@ -14,6 +14,8 @@ This is a Cadmus API layer customized for the CHGC project (*Cadmus Compendium H
 
 ## History
 
+- 2023-08-01: updated packages.
+
 ### 3.0.2
 
 - 2023-07-28: updated packages after TEI export refactoring.
