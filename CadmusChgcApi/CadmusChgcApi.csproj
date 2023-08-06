@@ -4,9 +4,9 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Version>3.0.2</Version>
-    <FileVersion>3.0.2</FileVersion>
-    <AssemblyVersion>3.0.2</AssemblyVersion>
+    <Version>3.0.3</Version>
+    <FileVersion>3.0.3</FileVersion>
+    <AssemblyVersion>3.0.3</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,9 +21,9 @@
 	  <PackageReference Include="Cadmus.Api.Controllers" Version="8.0.7" />
 	  <PackageReference Include="Cadmus.Api.Models" Version="8.0.6" />
 	  <PackageReference Include="Cadmus.Api.Services" Version="8.0.6" />
-	  <PackageReference Include="Cadmus.Chgc.Export" Version="2.1.2" />
-	  <PackageReference Include="Cadmus.Chgc.Import" Version="2.0.3" />
-	  <PackageReference Include="Cadmus.Chgc.Services" Version="2.0.1" />
+	  <PackageReference Include="Cadmus.Chgc.Export" Version="2.1.3" />
+	  <PackageReference Include="Cadmus.Chgc.Import" Version="2.1.3" />
+	  <PackageReference Include="Cadmus.Chgc.Services" Version="2.1.3" />
 	  <PackageReference Include="Cadmus.Graph.Extras" Version="3.0.4" />
 	  <PackageReference Include="Cadmus.Seed.General.Parts" Version="5.0.4" />
 	  <PackageReference Include="Cadmus.Seed.Img.Parts" Version="2.0.0" />
