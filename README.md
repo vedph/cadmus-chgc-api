@@ -14,6 +14,8 @@ This is a Cadmus API layer customized for the CHGC project (*Cadmus Compendium H
 
 ## History
 
+- 2023-08-09: added import thesauri endpoint to import controller.
+
 ### 3.0.3
 
 - 2023-08-06: updated packages.

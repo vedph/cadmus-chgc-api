@@ -64,7 +64,7 @@ public static class Program
                 #endif
                         .WriteTo.MongoDBCapped(cs,
                             cappedMaxSizeMb: !string.IsNullOrEmpty(maxSize) &&
-                                int.TryParse(maxSize, out int n) && n > 0 ? n : 10);
+                                int.TryParse(maxSize, out int n) && n > 0 ? n : 50);
                 })
                 .Build()
                 .SeedAsync(); // see Services/HostSeedExtension
