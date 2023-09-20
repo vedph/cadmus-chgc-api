@@ -21,7 +21,7 @@
 	  <PackageReference Include="Cadmus.Api.Controllers" Version="8.0.9" />
 	  <PackageReference Include="Cadmus.Api.Models" Version="8.0.9" />
 	  <PackageReference Include="Cadmus.Api.Services" Version="8.0.9" />
-	  <PackageReference Include="Cadmus.Chgc.Export" Version="2.1.5" />
+	  <PackageReference Include="Cadmus.Chgc.Export" Version="2.1.6" />
 	  <PackageReference Include="Cadmus.Chgc.Import" Version="2.1.5" />
 	  <PackageReference Include="Cadmus.Chgc.Services" Version="2.1.5" />
 	  <PackageReference Include="Cadmus.Graph.Extras" Version="3.0.7" />
@@ -30,8 +30,8 @@
 	  <PackageReference Include="Cadmus.Seed.General.Parts" Version="5.0.5" />
 	  <PackageReference Include="Cadmus.Seed.Img.Parts" Version="2.0.1" />
 	  <PackageReference Include="Cadmus.Seed.Philology.Parts" Version="7.0.3" />
-	  <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.10" />
-	  <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.10" />
+	  <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.11" />
+	  <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.11" />
 	  <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	  <PackageReference Include="Polly" Version="7.2.4" />
