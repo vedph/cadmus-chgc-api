@@ -18,12 +18,12 @@
 
   <ItemGroup>
 	  <PackageReference Include="AspNetCore.Identity.Mongo" Version="8.3.3" />
-	  <PackageReference Include="Cadmus.Api.Controllers" Version="8.0.9" />
-	  <PackageReference Include="Cadmus.Api.Models" Version="8.0.9" />
-	  <PackageReference Include="Cadmus.Api.Services" Version="8.0.9" />
-	  <PackageReference Include="Cadmus.Chgc.Export" Version="2.1.6" />
-	  <PackageReference Include="Cadmus.Chgc.Import" Version="2.1.5" />
-	  <PackageReference Include="Cadmus.Chgc.Services" Version="2.1.5" />
+	  <PackageReference Include="Cadmus.Api.Controllers" Version="8.0.11" />
+	  <PackageReference Include="Cadmus.Api.Models" Version="8.0.10" />
+	  <PackageReference Include="Cadmus.Api.Services" Version="8.0.10" />
+	  <PackageReference Include="Cadmus.Chgc.Export" Version="2.1.8" />
+	  <PackageReference Include="Cadmus.Chgc.Import" Version="2.1.8" />
+	  <PackageReference Include="Cadmus.Chgc.Services" Version="2.1.8" />
 	  <PackageReference Include="Cadmus.Graph.Extras" Version="3.0.7" />
 	  <PackageReference Include="Cadmus.Import" Version="3.0.8" />
 	  <PackageReference Include="Cadmus.Import.Excel" Version="3.0.8" />
