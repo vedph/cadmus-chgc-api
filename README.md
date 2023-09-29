@@ -14,6 +14,8 @@ This is a Cadmus API layer customized for the CHGC project (*Cadmus Compendium H
 
 ## History
 
+- 2023-09-29: updated packages after changes to import/export for surface ID.
+
 ### 3.0.10
 
 - 2023-09-24: updated packages.
