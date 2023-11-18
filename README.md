@@ -1,4 +1,4 @@
-# Cadmus CHGC API
+﻿# Cadmus CHGC API
 
 Quick Docker image build:
 
@@ -13,6 +13,10 @@ This is a Cadmus API layer customized for the CHGC project (*Cadmus Compendium H
 - [app](https://github.com/vedph/cadmus-chgc-app)
 
 ## History
+
+### 4.0.0
+
+- 2023-11-18: ⚠️ Upgraded to .NET 8.
 
 ### 3.0.11
 
