@@ -70,7 +70,7 @@ public sealed class Startup
 
     private void ConfigureCorsServices(IServiceCollection services)
     {
-        string[] origins = new[] { "http://localhost:4200" };
+        string[] origins = ["http://localhost:4200"];
 
         IConfigurationSection section = Configuration.GetSection("AllowedOrigins");
         if (section.Exists())

@@ -32,7 +32,7 @@ services:
     image: vedph2020/cadmus-chgc-api:3.0.11
     container_name: cadmus-chgc-api
     ports:
-      - 5078:80
+      - 5078:8080
     depends_on:
       - cadmus-chgc-mongo
       - cadmus-chgc-pgsql

@@ -14,6 +14,10 @@ This is a Cadmus API layer customized for the CHGC project (*Cadmus Compendium H
 
 ## History
 
+- 2024-05-06:
+  - updated packages.
+  - [upgraded logging](https://myrmex.github.io/overview/cadmus/dev/history/b-logging-cfg/).
+
 ### 4.0.0
 
 - 2023-11-18: ⚠️ Upgraded to .NET 8.
