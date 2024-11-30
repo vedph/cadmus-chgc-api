@@ -1,12 +1,26 @@
-using System.Collections;
+using Cadmus.Api.Services;
+using Cadmus.Api.Services.Seeding;
+using Cadmus.Core;
+using Fusi.Api.Auth.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 using System.Diagnostics;
-using Cadmus.Api.Services.Seeding;
-using Fusi.DbManager.PgSql;
-using NpgsqlTypes;
-using Serilog.Sinks.PostgreSQL.ColumnWriters;
-using Serilog.Sinks.PostgreSQL;
-using System.Text.RegularExpressions;
+using Cadmus.Core.Config;
+using Cadmus.Seed;
+using Fusi.Api.Auth.Services;
+using System.Text.Json;
+using Serilog.Events;
+using Microsoft.AspNetCore.HttpOverrides;
+using Scalar.AspNetCore;
+using Cadmus.Api.Controllers;
+using Cadmus.Api.Config.Services;
+using Cadmus.Api.Config;
+using Cadmus.Chgc.Services;
+using Cadmus.Index;
+using CsvHelper;
+using Microsoft.Extensions.Hosting;
+using Cadmus.Index.Config;
 
 namespace CadmusChgcApi;
 
@@ -15,90 +29,94 @@ namespace CadmusChgcApi;
 /// </summary>
 public static class Program
 {
-    private static void DumpEnvironmentVars()
+    // startup log file name, Serilog is configured later via appsettings.json
+    private const string STARTUP_LOG_NAME = "startup.log";
+
+    private static void ConfigureAppServices(IServiceCollection services,
+        IConfiguration config, IHostEnvironment hostEnvironment)
     {
-        Console.WriteLine("ENVIRONMENT VARIABLES:");
-        IDictionary dct = Environment.GetEnvironmentVariables();
-        List<string> keys = [];
-        var enumerator = dct.GetEnumerator();
-        while (enumerator.MoveNext())
-        {
-            keys.Add(((DictionaryEntry)enumerator.Current).Key.ToString()!);
-        }
+        // Cadmus repository
+        string dataCS = string.Format(
+        config.GetConnectionString("Default")!,
+            config.GetValue<string>("DatabaseNames:Data"));
+        services.AddSingleton<IRepositoryProvider>(
+            _ => new ChgcRepositoryProvider { ConnectionString = dataCS });
 
-        foreach (string key in keys.OrderBy(s => s))
-            Console.WriteLine($"{key} = {dct[key]}");
-    }
+        // part seeder factory provider
+        services.AddSingleton<IPartSeederFactoryProvider,
+            ChgcPartSeederFactoryProvider>();
 
-    private static bool IsAuditEnabledFor(IConfiguration config, string key)
-    {
-        bool? value = config.GetValue<bool?>($"Auditing:{key}");
-        return value != null && value != false;
-    }
+        // item browser factory provider
+        services.AddSingleton<IItemBrowserFactoryProvider>(_ =>
+        new StandardItemBrowserFactoryProvider(
+                config.GetConnectionString("Default")!));
 
-    private static void ConfigurePostgreLogging(HostBuilderContext context,
-        LoggerConfiguration loggerConfiguration)
-    {
-        string? cs = context.Configuration.GetConnectionString("PostgresLog");
-        if (string.IsNullOrEmpty(cs))
-        {
-            Console.WriteLine("Postgres log connection string not found");
-            return;
-        }
+        // index and graph
+        ServiceConfigurator.ConfigureIndexServices(services, config);
+        ServiceConfigurator.ConfigureGraphServices(services, config);
 
-        Regex dbRegex = new("Database=(?<n>[^;]+);?");
-        Match m = dbRegex.Match(cs);
-        if (!m.Success)
-        {
-            Console.WriteLine("Postgres log connection string not valid");
-            return;
-        }
-        string cst = dbRegex.Replace(cs, "Database={0};");
-        string dbName = m.Groups["n"].Value;
-        PgSqlDbManager mgr = new(cst);
-        if (!mgr.Exists(dbName))
-        {
-            Console.WriteLine($"Creating log database {dbName}...");
-            mgr.CreateDatabase(dbName, "", null);
-        }
+        // index writer for importer
+        string cs = string.Format(config.GetConnectionString("Index")!,
+            config.GetValue<string>("DatabaseNames:Data"));
+        var factory = new StandardItemIndexFactoryProvider(cs);
+        services.AddSingleton(_ =>
+            factory.GetFactory(File.ReadAllText(
+                Path.Combine(hostEnvironment.ContentRootPath,
+                "wwwroot",
+                "seed-profile.json"))).GetItemIndexWriter()!);
 
-        IDictionary<string, ColumnWriterBase> columnWriters =
-            new Dictionary<string, ColumnWriterBase>
-        {
-        { "message", new RenderedMessageColumnWriter(
-            NpgsqlDbType.Text) },
-        { "message_template", new MessageTemplateColumnWriter(
-            NpgsqlDbType.Text) },
-        { "level", new LevelColumnWriter(
-            true, NpgsqlDbType.Varchar) },
-        { "raise_date", new TimestampColumnWriter(
-            NpgsqlDbType.TimestampTz) },
-        { "exception", new ExceptionColumnWriter(
-            NpgsqlDbType.Text) },
-        { "properties", new LogEventSerializedColumnWriter(
-            NpgsqlDbType.Jsonb) },
-        { "props_test", new PropertiesColumnWriter(
-            NpgsqlDbType.Jsonb) },
-        { "machine_name", new SinglePropertyColumnWriter(
-            "MachineName", PropertyWriteMethod.ToString,
-            NpgsqlDbType.Text, "l") }
-        };
-
-        loggerConfiguration
-            .WriteTo.PostgreSQL(cs, "log", columnWriters,
-            needAutoCreateTable: true, needAutoCreateSchema: true);
+        // previewer
+        services.AddSingleton(p => ServiceConfigurator.GetPreviewer(p, config));
     }
 
     /// <summary>
-    /// Creates the host builder.
+    /// Configures the services.
     /// </summary>
-    /// <param name="args">The arguments.</param>
-    public static IHostBuilder CreateHostBuilder(string[] args) =>
-        Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder =>
+    /// <param name="services">The services.</param>
+    public static void ConfigureServices(IServiceCollection services,
+        IConfiguration config, IHostEnvironment hostEnvironment)
+    {
+        // configuration
+        services.AddSingleton(_ => config);
+        ServiceConfigurator.ConfigureOptionsServices(services, config);
+
+        // security
+        ServiceConfigurator.ConfigureCorsServices(services, config);
+        ServiceConfigurator.ConfigureRateLimiterService(services, config, hostEnvironment);
+        ServiceConfigurator.ConfigureAuthServices(services, config);
+
+        // proxy
+        services.AddHttpClient();
+        services.AddResponseCaching();
+
+        // API controllers
+        services.AddControllers();
+        // camel-case JSON in response
+        services.AddMvc()
+            // https://docs.microsoft.com/en-us/aspnet/core/migration/22-to-30?view=aspnetcore-2.2&tabs=visual-studio#jsonnet-support
+            .AddJsonOptions(options =>
             {
-                webBuilder.UseStartup<Startup>();
+                options.JsonSerializerOptions.PropertyNamingPolicy =
+                    JsonNamingPolicy.CamelCase;
             });
+
+        // framework services
+        // IMemoryCache: https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory
+        services.AddMemoryCache();
+
+        // user repository service
+        services.AddScoped<IUserRepository<NamedUser>,
+            UserRepository<NamedUser, IdentityRole>>();
+
+        // messaging
+        ServiceConfigurator.ConfigureMessagingServices(services);
+
+        // logging
+        ServiceConfigurator.ConfigureLogging(services);
+
+        // app services
+        ConfigureAppServices(services, config, hostEnvironment);
+    }
 
     /// <summary>
     /// Entry point.
@@ -106,76 +124,120 @@ public static class Program
     /// <param name="args">The arguments.</param>
     public static async Task<int> Main(string[] args)
     {
+        // early startup logging to ensure we catch any exceptions
+        Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+            .Enrich.FromLogContext()
+            .WriteTo.Console()
+#if DEBUG
+            .WriteTo.File(STARTUP_LOG_NAME, rollingInterval: RollingInterval.Day)
+#endif
+            .CreateLogger();
+
         try
         {
-            Log.Information("Starting Cadmus Chgc API host");
-            DumpEnvironmentVars();
+            Log.Information("Starting Cadmus API host");
+            ServiceConfigurator.DumpEnvironmentVars();
 
-            // this is the place for seeding:
-            // see https://stackoverflow.com/questions/45148389/how-to-seed-in-entity-framework-core-2
-            // and https://docs.microsoft.com/en-us/aspnet/core/migration/1x-to-2x/?view=aspnetcore-2.1#move-database-initialization-code
-            var host = await CreateHostBuilder(args)
-                .UseSerilog((hostingContext, loggerConfiguration) =>
+            WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+            ServiceConfigurator.ConfigureLogger(builder);
+
+            IConfiguration config = new ConfigurationService(builder.Environment)
+                .Configuration;
+
+            ServiceConfigurator.ConfigureServices(builder.Services, config,
+                builder.Environment);
+            ConfigureAppServices(builder.Services, config, builder.Environment);
+
+            builder.Services.AddOpenApi();
+
+            // controllers from Cadmus.Api.Controllers
+            builder.Services.AddControllers()
+                .AddApplicationPart(typeof(ItemController).Assembly)
+                .AddControllersAsServices();
+
+            WebApplication app = builder.Build();
+
+            // forward headers for use with an eventual reverse proxy
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor
+                    | ForwardedHeaders.XForwardedProto
+            });
+
+            // development or production
+            if (builder.Environment.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                // https://docs.microsoft.com/en-us/aspnet/core/security/enforcing-ssl?view=aspnetcore-5.0&tabs=visual-studio
+                app.UseExceptionHandler("/Error");
+                if (config.GetValue<bool>("Server:UseHSTS"))
                 {
-                    var maxSize = hostingContext.Configuration["Serilog:MaxMbSize"];
+                    Console.WriteLine("HSTS: yes");
+                    app.UseHsts();
+                }
+                else
+                {
+                    Console.WriteLine("HSTS: no");
+                }
+            }
 
-                    loggerConfiguration.ReadFrom.Configuration(
-                        hostingContext.Configuration);
+            // HTTPS redirection
+            if (config.GetValue<bool>("Server:UseHttpsRedirection"))
+            {
+                Console.WriteLine("HttpsRedirection: yes");
+                app.UseHttpsRedirection();
+            }
+            else
+            {
+                Console.WriteLine("HttpsRedirection: no");
+            }
 
-                    if (IsAuditEnabledFor(hostingContext.Configuration, "File"))
-                    {
-                        Console.WriteLine("Logging to file enabled");
-                        loggerConfiguration.WriteTo.File("cadmus-log.txt",
-                            rollingInterval: RollingInterval.Day);
-                    }
+            // CORS
+            app.UseCors("CorsPolicy");
+            // rate limiter
+            if (!config.GetValue<bool>("RateLimit:IsDisabled"))
+                app.UseRateLimiter();
+            // authentication
+            app.UseAuthentication();
+            app.UseAuthorization();
+            // proxy
+            app.UseResponseCaching();
 
-                    if (IsAuditEnabledFor(hostingContext.Configuration, "Mongo"))
-                    {
-                        Console.WriteLine("Logging to Mongo enabled");
-                        string? cs = hostingContext.Configuration
-                            .GetConnectionString("MongoLog");
+            // seed auth database (via Services/HostAuthSeedExtensions)
+            await app.SeedAuthAsync();
 
-                        if (!string.IsNullOrEmpty(cs))
-                        {
-                            loggerConfiguration.WriteTo.MongoDBCapped(cs,
-                                cappedMaxSizeMb: !string.IsNullOrEmpty(maxSize) &&
-                                int.TryParse(maxSize, out int n) && n > 0 ? n : 10);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Mongo log connection string not found");
-                        }
-                    }
+            // seed Cadmus database (via Services/HostSeedExtension)
+            await app.SeedAsync();
 
-                    if (IsAuditEnabledFor(hostingContext.Configuration, "Postgres"))
-                    {
-                        Console.WriteLine("Logging to Postgres enabled");
-                        ConfigurePostgreLogging(hostingContext, loggerConfiguration);
-                    }
+            // map controllers and Scalar API
+            app.MapControllers();
+            app.MapOpenApi();
+            app.MapScalarApiReference(options =>
+            {
+                options.WithTitle("Cadmus CHGC API")
+                       .WithPreferredScheme("Bearer");
+            });
 
-                    if (IsAuditEnabledFor(hostingContext.Configuration, "Console"))
-                    {
-                        Console.WriteLine("Logging to console enabled");
-                        loggerConfiguration.WriteTo.Console();
-                    }
-                })
-                .Build()
-                .SeedAsync(); // see Services/HostSeedExtension
-
-            host.Run();
+            Log.Information("Running API");
+            await app.RunAsync();
 
             return 0;
         }
         catch (Exception ex)
         {
-            Log.Fatal(ex, "Cadmus Chgc API host terminated unexpectedly");
+            Log.Fatal(ex, "Cadmus API host terminated unexpectedly");
             Debug.WriteLine(ex.ToString());
             Console.WriteLine(ex.ToString());
             return 1;
         }
         finally
         {
-            Log.CloseAndFlush();
+            await Log.CloseAndFlushAsync();
         }
     }
 }

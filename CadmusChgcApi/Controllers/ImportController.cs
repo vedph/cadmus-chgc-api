@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using Cadmus.Api.Models;
+using Cadmus.Index.Config;
 
 namespace CadmusChgcApi.Controllers;
 
@@ -25,15 +26,15 @@ public sealed class ImportController : ControllerBase
     // note that injecting a Serilog logger via MS ILogger<T> requires
     // package Serilog.Extensions.Logging. Also notice you must inject
     // ILogger<T>, not just ILogger.
-    private readonly ILogger<ExportController> _logger;
+    private readonly ILogger<ImportController> _logger;
     private readonly IItemIndexWriter _indexWriter;
 
     public ImportController(IRepositoryProvider repositoryProvider,
-        IItemIndexWriter indexWriter,
-        ILogger<ExportController> logger)
+        IItemIndexWriter writer,
+        ILogger<ImportController> logger)
     {
         _repositoryProvider = repositoryProvider;
-        _indexWriter = indexWriter;
+        _indexWriter = writer;
         _logger = logger;
     }
 
@@ -123,7 +124,7 @@ public sealed class ImportController : ControllerBase
 
             Thesaurus? source;
             ImportUpdateMode mode = GetMode(model.Mode?[0] ?? 'R');
-            List<string> ids = new();
+            List<string> ids = [];
 
             while ((source = reader.Next()) != null)
             {
