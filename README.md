@@ -14,6 +14,8 @@ This is a Cadmus API layer customized for the CHGC project (*Cadmus Compendium H
 
 ## History
 
+- 2024-12-27: updated packages.
+
 ### 5.0.0
 
 - 2024-11-30: ⚠️ Upgraded to .NET 9.
