@@ -17,10 +17,6 @@ using Cadmus.Api.Controllers;
 using Cadmus.Api.Config.Services;
 using Cadmus.Api.Config;
 using Cadmus.Chgc.Services;
-using Cadmus.Index;
-using CsvHelper;
-using Microsoft.Extensions.Hosting;
-using Cadmus.Index.Config;
 
 namespace CadmusChgcApi;
 
@@ -64,6 +60,11 @@ public static class Program
                 Path.Combine(hostEnvironment.ContentRootPath,
                 "wwwroot",
                 "seed-profile.json"))).GetItemIndexWriter()!);
+
+        // metadata builder factory provider
+        services.AddSingleton<IItemMetadataBuilderFactoryProvider>(_ =>
+            new StandardItemMetadataBuilderFactoryProvider(
+                config.GetConnectionString("Default")!));
 
         // previewer
         services.AddSingleton(p => ServiceConfigurator.GetPreviewer(p, config));
@@ -110,9 +111,6 @@ public static class Program
 
         // messaging
         ServiceConfigurator.ConfigureMessagingServices(services);
-
-        // logging
-        ServiceConfigurator.ConfigureLogging(services);
 
         // app services
         ConfigureAppServices(services, config, hostEnvironment);
@@ -220,7 +218,7 @@ public static class Program
             app.MapScalarApiReference(options =>
             {
                 options.WithTitle("Cadmus CHGC API")
-                       .WithPreferredScheme("Bearer");
+                       .AddPreferredSecuritySchemes("Bearer");
             });
 
             Log.Information("Running API");

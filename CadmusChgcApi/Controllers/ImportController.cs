@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using Cadmus.Api.Models;
-using Cadmus.Index.Config;
 
 namespace CadmusChgcApi.Controllers;
 
@@ -47,7 +46,7 @@ public sealed class ImportController : ControllerBase
     /// <returns>Object with count=imported items count or error=error message.
     /// </returns>
     [HttpPost("api/import/groups/{id}")]
-    public ImportItemModel Import([FromRoute] string id,
+    public async Task<ImportItemModel> Import([FromRoute] string id,
         [FromBody] ImportItemBindingModel model)
     {
         ICadmusRepository repository = _repositoryProvider.CreateRepository();
@@ -61,7 +60,7 @@ public sealed class ImportController : ControllerBase
                     ? new Regex(model.UriShortenerPattern)
                     : null
             };
-            int added = importer.Import(id, doc);
+            int added = await importer.ImportAsync(id, doc);
             return new ImportItemModel
             {
                 Count = added
@@ -90,7 +89,7 @@ public sealed class ImportController : ControllerBase
 
     [Authorize(Roles = "admin")]
     [HttpPost("api/import/thesauri")]
-    public ImportThesauriResult UploadThesauri(
+    public async Task<ImportResult> UploadThesauri(
         [FromForm(Name = "file")] IFormFile file,
         [FromQuery] ImportThesauriBindingModel model)
     {
@@ -112,7 +111,7 @@ public sealed class ImportController : ControllerBase
 
         try
         {
-            Stream stream = file.OpenReadStream();
+            using Stream stream = file.OpenReadStream();
             using IThesaurusReader reader =
                 Path.GetExtension(file.FileName).ToLowerInvariant() switch
                 {
@@ -122,12 +121,12 @@ public sealed class ImportController : ControllerBase
                     _ => new JsonThesaurusReader(stream)
                 };
 
-            Thesaurus? source;
             ImportUpdateMode mode = GetMode(model.Mode?[0] ?? 'R');
             List<string> ids = [];
 
-            while ((source = reader.Next()) != null)
+            while (reader.Next())
             {
+                Thesaurus source = reader.Current!;
                 if (string.IsNullOrEmpty(source.Id))
                     throw new InvalidOperationException("No ID for thesaurus");
 
@@ -135,17 +134,18 @@ public sealed class ImportController : ControllerBase
                 ids.Add(source.Id);
 
                 // fetch from repository
-                Thesaurus? target = repository.GetThesaurus(source.Id);
+                Thesaurus? target = await repository.GetThesaurusAsync(source.Id);
 
                 // import
                 Thesaurus result = ThesaurusHelper.CopyThesaurus(
                     source, target, mode);
 
                 // save
-                if (model.DryRun != true) repository.AddThesaurus(result);
+                if (model.DryRun != true)
+                    await repository.AddThesaurusAsync(result);
             }
 
-            return new ImportThesauriResult
+            return new ImportResult
             {
                 ImportedIds = ids
             };
@@ -154,7 +154,7 @@ public sealed class ImportController : ControllerBase
         {
             _logger?.LogError(ex, "Error importing thesauri: {Message}",
                 ex.Message);
-            return new ImportThesauriResult
+            return new ImportResult
             {
                 Error = ex.Message
             };
