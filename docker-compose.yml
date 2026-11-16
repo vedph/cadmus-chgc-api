@@ -27,7 +27,7 @@ services:
 
   # Cadmus CHGC API
   cadmus-chgc-api:
-    image: vedph2020/cadmus-chgc-api:3.0.11
+    image: vedph2020/cadmus-chgc-api:6.0.0
     container_name: cadmus-chgc-api
     ports:
       - 5078:8080
