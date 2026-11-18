@@ -14,7 +14,7 @@ Also, be sure to have run `buildnpub.ps1` for both local and remote NuGet feeds,
 These commands build for multiple platforms and push directly to Docker Hub:
 
 ```sh
-docker buildx build --platform linux/amd64,linux/arm64 -t vedph2020/cadmus-chgc-api:6.0.0 -t vedph2020/cadmus-chgc-api:latest --push .
+docker buildx build --platform linux/amd64,linux/arm64 -t vedph2020/cadmus-chgc-api:6.0.1 -t vedph2020/cadmus-chgc-api:latest --push .
 ```
 
 (replace with the current version).
